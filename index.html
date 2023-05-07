@@ -17,12 +17,19 @@
   <body style="background-color: black; color: white">
     <!-- navbar -->
     <nav
-      class="navbar bg-body-primary bg-dark sticky-navar"
+      class="navbar"
       data-bs-theme="dark"
       style="border-radius: 15px"
     >
       <div class="container-fluid">
-        <a class="navbar-brand">Welcome to NotesX</a>
+        <a class="navbar-brand">
+          <img
+            src="sticky-notes.png"
+            width="30"
+            height="24"
+            class="d-inline-flex align-text-top"
+          /> Welcome to NotesX 
+        </a>
         <form class="d-flex" role="search">
           <input
             class="form-control me-2"
@@ -36,12 +43,12 @@
     </nav>
 
     <!-- container which contain card for taking and display notes -->
-    <div class="container-fluid" style="--bs-gutter-x: 0.75rem">
+    <div class="container-fluid">
       <!-- card to take notes -->
       <div class="card boder-light bg-transparent">
         <div class="card-body text-light">
           <div class="mb-2">
-            <textarea class="form-control" id="addTxt" rows="3"></textarea>
+            <textarea class="form-control" id="addTxt" rows="4"></textarea>
           </div>
           <button class="btn btn-outline-primary" id="addBtn">ADD NOTE</button>
         </div>

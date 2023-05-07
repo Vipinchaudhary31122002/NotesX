@@ -27,7 +27,7 @@ function showNotes() {
   let html = "";
   notesObj.forEach(function (element, index) {
     html += `   <div class="col">
-                <div class="card border-success bg-transparent">
+                <div class="card border-success bg-transparent h-100">
                 <div class="card-body text-success">
                     <h5 class="card-title">Note ${index + 1}</h5>
                     <p class="card-text"> ${element}</p>
