@@ -31,7 +31,7 @@ function showNotes() {
                 <div class="card-body">
                     <h5 class="card-title">Note ${index + 1}</h5>
                     <p class="card-text"> ${element}</p>
-                    <button class="btn btn-primary" id="${index}">DELETE NOTE</button>
+                    <button onclick="deleteNote(this.id)" class="btn btn-danger" id="${index}">DELETE NOTE</button>
                 </div>
                 </div>
             </div>`;
@@ -44,36 +44,31 @@ function showNotes() {
   }
 }
 
-// // Function to delete a note
-// function deleteNote(index) {
-// //   console.log("I am deleting", index);
+// Function to delete a note
+function deleteNote(index) {
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesObj = [];
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+  notesObj.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(notesObj));
+  showNotes();
+}
 
-//   let notes = localStorage.getItem("notes");
-//   if (notes == null) {
-//     notesObj = [];
-//   } else {
-//     notesObj = JSON.parse(notes);
-//   }
-
-//   notesObj.splice(index, 1);
-//   localStorage.setItem("notes", JSON.stringify(notesObj));
-//   showNotes();
-// }
-
-// let search = document.getElementById('searchTxt');
-// search.addEventListener("input", function(){
-
-//     let inputVal = search.value.toLowerCase();
-//     // console.log('Input event fired!', inputVal);
-//     let noteCards = document.getElementsByClassName('noteCard');
-//     Array.from(noteCards).forEach(function(element){
-//         let cardTxt = element.getElementsByTagName("p")[0].innerText;
-//         if(cardTxt.includes(inputVal)){
-//             element.style.display = "block";
-//         }
-//         else{
-//             element.style.display = "none";
-//         }
-//         // console.log(cardTxt);
-//     })
-// })
+// for searching the particular note
+let search = document.getElementById('searchTxt');
+search.addEventListener("input", function(){
+    let inputVal = search.value.toLowerCase();
+    let noteCards = document.getElementsByClassName('noteCard');
+    Array.from(noteCards).forEach(function(element){
+        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        if(cardTxt.includes(inputVal)){
+            element.style.display = "block";
+        }
+        else{
+            element.style.display = "none";
+        }
+    })
+})
