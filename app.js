@@ -26,7 +26,7 @@ function showNotes() {
   }
   let html = "";
   notesObj.forEach(function (element, index) {
-    html += `   <div class="col">
+    html += `   <div class="col noteCard">
                 <div class="card border-success bg-transparent h-100">
                 <div class="card-body text-success">
                     <h5 class="card-title">Note ${index + 1}</h5>
@@ -60,7 +60,7 @@ function deleteNote(index) {
 // for searching the particular note
 let search = document.getElementById('searchTxt');
 search.addEventListener("input", function(){
-    let inputVal = search.value.toLowerCase();
+    let inputVal = search.value;
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function(element){
         let cardTxt = element.getElementsByTagName("p")[0].innerText;
