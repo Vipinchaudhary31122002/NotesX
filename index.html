@@ -12,28 +12,53 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <div class="container-fluid py-1 bg-black" style="--bs-gutter-x: 0.5rem;">
-      <!-- navbar -->
-      <nav class="navbar bg-body-primary bg-dark sticky-navar" data-bs-theme="dark" style="border-radius: 15px;">
-        <div class="container-fluid">
-          <a class="navbar-brand">NotesX</a>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+  <body style="background-color: black; color: white;">
+    <!-- navbar -->
+    <nav
+      class="navbar bg-body-primary bg-dark sticky-navar my-1"
+      data-bs-theme="dark"
+      style="border-radius: 15px"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand">Welcome to NotesX</a>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- card to display notes -->
+    <div class="container-fluid py-1" style="--bs-gutter-x: 0.5rem">
+      <div class="card mx-2">
+        <div class="card-body">
+          <h5 class="card-title">Type here to add Note</h5>
+          <div class="mb-3">
+            <textarea class="form-control" id="addText" rows="3"></textarea>
+          </div>
+          <button class="btn btn-primary" id="addBtn">Add</button>
         </div>
-      </nav>
+      </div>
+
+      <h1>Your Notes</h1>
+      <hr>
+      <div class="row row-cols-1 row-cols-md-2 g-1">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, corrupti. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
-
-
 
     <!-- bootstrap js -->
     <script
@@ -41,7 +66,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    
+
     <!-- internal js -->
     <script src="js/app.js"></script>
   </body>
