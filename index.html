@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="background-color: black; color: white;">
+  <body style="background-color: black; color: white">
     <!-- navbar -->
     <nav
       class="navbar bg-body-primary bg-dark sticky-navar my-1"
@@ -39,25 +39,15 @@
         <div class="card-body">
           <h5 class="card-title">Type here to add Note</h5>
           <div class="mb-3">
-            <textarea class="form-control" id="addText" rows="3"></textarea>
+            <textarea class="form-control" id="addTxt" rows="3"></textarea>
           </div>
-          <button class="btn btn-primary" id="addBtn">Add</button>
+          <button class="btn btn-primary" id="addBtn">ADD NOTE</button>
         </div>
       </div>
 
       <h1>Your Notes</h1>
-      <hr>
-      <div class="row row-cols-1 row-cols-md-2 g-1">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, corrupti. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+      <hr />
+      <div class="row row-cols-1 row-cols-md-2 g-1" id="notes"></div>
     </div>
 
     <!-- bootstrap js -->
